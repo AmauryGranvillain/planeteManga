@@ -1,0 +1,11 @@
+.manga-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 10x;
+    background: #323232;
+    color: white;
+}
+.manga-item .infosup span{
+    margin: 0 5px;
+}
