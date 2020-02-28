@@ -1,0 +1,34 @@
+.backHome{
+    color: white;
+    padding: 5px 10px;
+    font-size: 18px;
+    display: inline-block;
+    background: #ef323a;
+}
+.manga-details{
+    padding: 0 100px;
+}
+.container-cover{
+    width: 400px;
+    margin: 5px auto;
+}
+.container-cover > img{
+    width: 100%;
+}
+.manga-details h1{
+    font-size: 30px;
+    padding: 10px 5px;
+    text-align: center;
+    color: white;
+    background-color: #ef323a;
+}
+.manga-details .infosup{
+    display: flex;
+    background-color: #323232;
+    color: white;
+    padding: 20px;
+}
+.manga-details .infosup > span{
+    flex: 1;
+    text-align: center;
+}

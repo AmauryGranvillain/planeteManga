@@ -72,5 +72,45 @@
                     "logo": "img/japan/kingdom.png"
                 }
             }
+        },
+        {
+        "manga": {
+            "name": "Eyeshield 21",
+            "slug": "eyeshield_21",
+            "authors": [
+                {
+                    "name": "Riichirō Inagaki"
+                },
+                {
+                    "name": "Yusuke Murata"
+                }
+            ],
+            "closeMangas": [],
+            "description": "Sena Kobayakawa est un jeune lycéen petit et par-dessus tout, craintif. Souffre-douleur et préposé aux basses besognes des Caïds de sa classe, il est constamment en train de courir pour aller chercher ce qu'ils demandent. Un jour, Yoichi Hiruma, terreur du lycée et membre du club de football Américain avec son ami Kurita, s'aperçoit de son extraordinaire vitesse et cherche à tout prix à le recruter dans le club en tant que Running Back. Mais l'amie d'enfance de Sena, Mamori, n'est pas de cet avis.",
+            "hasAnime": true,
+            "country": "Japan",
+            "isFinished": true,
+            "keywords": "sport, american football",
+            "lastUpdate": "16/04/2016",
+            "nbEpisodes": 145,
+            "type": "Shonen",
+            "mainHero": {
+                "name": "Kobayakawa Sena"
+            },
+            "france": {
+                "editor": "Glénat",
+                "logo": "img/france/eyeshield21.png",
+                "nbBooks": 37
+            },
+            "japan" : {
+                "magazine": "Weekly Shōnen Jump",
+                "editor": "Shueisha",
+                "logo": "img/japan/eyeshield21.png",
+                "nbBooks": 37,
+                "nbChapters": 333,
+                "publicationEnd": "2009",
+                "publicationStart": "2002"
+            }
         }
+    }
 ]

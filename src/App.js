@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import './mangaItem.css'
 import {LIST_MANGA} from './mangaList';
 import MangaDetails from './mangaDetails';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
@@ -29,7 +28,6 @@ class App extends Component{
 
   handleManga = manga => {
     this.setState({currentManga: manga})
-    console.log(this.state.mangaHits)
     return
   }
 
@@ -42,9 +40,9 @@ class App extends Component{
             <Route exact path="/">
               <div className="manga-list">
                 {
-                    this.state.mangaHits.map(({manga, index}) => (
-                      <MangaItem key={index} onClick={() => this.handleManga(manga)} manga={manga}/>
-                      ))
+                  this.state.mangaHits.map(({manga, index}) => (
+                    <MangaItem key={index} onClick={() => this.handleManga(manga)} manga={manga}/>
+                  ))
                 }
               </div>
               

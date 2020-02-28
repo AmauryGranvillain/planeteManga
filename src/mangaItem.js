@@ -9,11 +9,7 @@ const MangaItem = ({ manga, onClick }) => {
             <div className={`manga-item`}>
                 <h3>{manga.name}</h3>
                 <div className="infosup">
-                    {
-                        manga.authors.map(({author, index}) => (
-                            <span key={index}>{author}</span>
-                        ))
-                    }
+                    <span>{manga.authors[0].name}</span>
                     <span>{manga.japan.publicationStart}</span>  
                     <span>{manga.type}</span>
                 </div>
