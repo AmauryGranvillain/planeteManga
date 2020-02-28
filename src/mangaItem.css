@@ -10,6 +10,9 @@
 }
 .manga-item:hover{
     background: #808080;
+}
+.manga-item .infosup{
+    margin: 5px 0 3px 0;
 } 
 .manga-item .infosup span{
     margin: 0 5px;

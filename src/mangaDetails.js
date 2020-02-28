@@ -11,19 +11,19 @@ const MangaDetails = ({manga}) => {
             <div className="manga-details">
                 <div className="container-cover">
                     <Img className="cover-image" src={"/" + manga.japan.logo} alt={"cover " + manga.name} 
-                        loader={<Loader type="Puff"
-                                        color="#00BFFF"
-                                        height={100}
-                                        width={100}
-                                        timeout={200}
+                        loader={<Loader type="RevolvingDot"
+                                        color="#ef323a"
+                                        height={50}
+                                        width={50}
+                                        timeout={3000}
                         />}
                     />
                 </div>
                 <h1>{manga.name}</h1>
                 <div className="infosup">
-                    <span >Auteur : {manga.authors[0].name}</span>
-                    <span>Date de publication : {manga.japan.publicationStart}</span>  
-                    <span>Genre : {manga.type}</span>
+                    <span >Auteur : <b>{manga.authors[0].name}</b></span>
+                    <span>Date de publication : <b>{manga.japan.publicationStart}</b></span>  
+                    <span>Genre : <b>{manga.type}</b></span>
                 </div>
                 <p>{manga.description}</p>
             </div>

@@ -1,79 +1,79 @@
 [
     {
         "manga": {
-                "name": "Naruto",
-                "slug": "naruto",
-                "authors": [
-                    {
-                        "name": "Masashi Kishimoto"
-                    }
-                ],
-                "closeMangas": ["black_clover", "satan_666"],
-                "country": "Japan",
-                "description": "Naruto est un jeune ninja turbulent et orphelin. Seul depuis tout petit, il multiplie les bêtises en tout genre pour se faire remarquer mais n'en arrive qu'à se faire détester par le village de Konoha. Par le biais de son professeur Iruka et du traître Mizuki, il découvre que cette haine collective n'est autre que le fruit du démon qu'il abrite en lui. Kyubi, le démon renard à neuf queues ayant attaqué le village et scellé en lui par le 4ème Hokage. Mais loin de se laisser abattre, Naruto parvient à devenir un vrai ninja et part en missions accompagné du professeur Kakashi, de son amie Sakura et de son rival, Sasuke Uchiwa.",
-                "hasAnime": true,
-                "isFinished": true,
-                "keywords": "ninja",
-                "lastUpdate": "05/10/2017",
-                "nbEpisodes": 500,
-                "type": "Shonen",
-                "mainHero": {
-                    "name": "Naruto Uzumaki"
-                },
-                "france": {
-                    "editor": "Kana",
-                    "logo": "img/france/naruto.png",
-                    "nbBooks": 72
-                },
-                "japan" : {
-                    "magazine": "Weekly Shōnen Jump",
-                    "editor": "Shueisha",
-                    "nbBooks": 72,
-                    "logo": "img/japan/naruto.png",
-                    "nbChapters": 700,
-                    "publicationEnd": "2014",
-                    "publicationStart": "1999"
+            "name": "Naruto",
+            "slug": "naruto",
+            "authors": [
+                {
+                    "name": "Masashi Kishimoto"
                 }
+            ],
+            "closeMangas": ["black_clover", "satan_666"],
+            "country": "Japan",
+            "description": "Naruto est un jeune ninja turbulent et orphelin. Seul depuis tout petit, il multiplie les bêtises en tout genre pour se faire remarquer mais n'en arrive qu'à se faire détester par le village de Konoha. Par le biais de son professeur Iruka et du traître Mizuki, il découvre que cette haine collective n'est autre que le fruit du démon qu'il abrite en lui. Kyubi, le démon renard à neuf queues ayant attaqué le village et scellé en lui par le 4ème Hokage. Mais loin de se laisser abattre, Naruto parvient à devenir un vrai ninja et part en missions accompagné du professeur Kakashi, de son amie Sakura et de son rival, Sasuke Uchiwa.",
+            "hasAnime": true,
+            "isFinished": true,
+            "keywords": "ninja",
+            "lastUpdate": "05/10/2017",
+            "nbEpisodes": 500,
+            "type": "Shonen",
+            "mainHero": {
+                "name": "Naruto Uzumaki"
+            },
+            "france": {
+                "editor": "Kana",
+                "logo": "img/france/naruto.png",
+                "nbBooks": 72
+            },
+            "japan" : {
+                "magazine": "Weekly Shōnen Jump",
+                "editor": "Shueisha",
+                "nbBooks": 72,
+                "logo": "img/japan/naruto.png",
+                "nbChapters": 700,
+                "publicationEnd": "2014",
+                "publicationStart": "1999"
             }
+        }
     },
     {
-            "manga": {
-                "name": "Kingdom",
-                "slug": "kingdom",
-                "authors": [
-                    {
-                        "name": "Yasuhisa Hara"
-                    }
-                ],
-                "closeMangas": [],
-                "country": "Japan",
-                "description": "Des centaines d'années auparavant en Chine, Shin et Hyou sont deux paysans esclaves et le coeur rempli de rêves et d'espoir. Un seul objectif en tête, les deux garçons s'entraînent sans relâche pour devenir Grand Général dans l'armée et ainsi prouver leur force et faire résonner leur nom dans tout le pays. A la suite de la mort de Hyou, Shin jure d'accomplir ce dessein coûte que coûte en accompagnant le jeune Ei Sei qui tente de regagner son trône de roi de Qin, le plus grand état de Chine.",
-                "hasAnime": true,
-                "isFinished": false,
-                "keywords": "war, general, qin, china",
-                "lastUpdate": "05/10/2017",
-                "nbEpisodes": 0,
-                "type": "Seinen",
-                "mainHero": {
-                    "name": "Shin"
-                },
-                "france": {
-                    "editor": "",
-                    "logo": "img/france/kingdom.png",
-                    "nbBooks": 0
-                },
-                "japan" : {
-                    "editor": "Shueisha",
-                    "magazine": "Weekly Young Jump",
-                    "nbBooks": 49,
-                    "nbChapters": 532,
-                    "publicationEnd": null,
-                    "publicationStart": "2006",
-                    "logo": "img/japan/kingdom.png"
+        "manga": {
+            "name": "Kingdom",
+            "slug": "kingdom",
+            "authors": [
+                {
+                    "name": "Yasuhisa Hara"
                 }
+            ],
+            "closeMangas": [],
+            "country": "Japan",
+            "description": "Des centaines d'années auparavant en Chine, Shin et Hyou sont deux paysans esclaves et le coeur rempli de rêves et d'espoir. Un seul objectif en tête, les deux garçons s'entraînent sans relâche pour devenir Grand Général dans l'armée et ainsi prouver leur force et faire résonner leur nom dans tout le pays. A la suite de la mort de Hyou, Shin jure d'accomplir ce dessein coûte que coûte en accompagnant le jeune Ei Sei qui tente de regagner son trône de roi de Qin, le plus grand état de Chine.",
+            "hasAnime": true,
+            "isFinished": false,
+            "keywords": "war, general, qin, china",
+            "lastUpdate": "05/10/2017",
+            "nbEpisodes": 0,
+            "type": "Seinen",
+            "mainHero": {
+                "name": "Shin"
+            },
+            "france": {
+                "editor": "",
+                "logo": "img/france/kingdom.png",
+                "nbBooks": 0
+            },
+            "japan" : {
+                "editor": "Shueisha",
+                "magazine": "Weekly Young Jump",
+                "nbBooks": 49,
+                "nbChapters": 532,
+                "publicationEnd": null,
+                "publicationStart": "2006",
+                "logo": "img/japan/kingdom.png"
             }
-        },
-        {
+        }
+    },
+    {
         "manga": {
             "name": "Eyeshield 21",
             "slug": "eyeshield_21",
@@ -110,6 +110,81 @@
                 "nbChapters": 333,
                 "publicationEnd": "2009",
                 "publicationStart": "2002"
+            }
+        }
+    },
+    {
+        "manga": {
+            "name": "Boku No Hero Academia",
+            "slug": "boku_no_hero_academia",
+            "authors": [
+                {
+                    "name": "Horikoshi Kouhei"
+                }
+            ],
+            "closeMangas": ["black_clover"],
+            "description": "",
+            "hasAnime": true,
+            "country": "Japan",
+            "isFinished": false,
+            "keywords": "hero, super heroes",
+            "lastUpdate": "05/10/2017",
+            "nbEpisodes": 13,
+            "type": "Shonen",
+            "mainHero": {
+                "name": "Midoriya Izuku"
+            },
+            "france": {
+                "magazine": "Weekly Shōnen Jump",
+                "editor": "Shueisha",
+                "logo": "img/france/bokunoheroacademia.png",
+                "nbBooks": 8
+            },
+            "japan" : {
+                "magazine": "Weekly Shōnen Jump",
+                "editor": "Shueisha",
+                "logo": "img/japan/bokunoheroacademia.png",
+                "nbBooks": 15,
+                "nbChapters": 153,
+                "publicationEnd": null,
+                "publicationStart": "2014"
+            }
+        }
+    },
+    {
+        "manga": {
+            "name": "Black Clover",
+            "slug": "black_clover",
+            "authors": [
+                {
+                    "name": "Tabata Yuuki"
+                }
+            ],
+            "closeMangas": ["naruto", "boku_no_hero_academia"],
+            "description": "",
+            "hasAnime": true,
+            "country": "Japan",
+            "isFinished": true,
+            "keywords": "",
+            "nbEpisodes": 0,
+            "lastUpdate": "16/04/2016",
+            "type": "Shonen",
+            "mainHero": {
+                "name": "Aster"
+            },
+            "france": {
+                "editor": "Glénat",
+                "nbBooks": 0,
+                "logo": "img/france/blackclover.jpg"
+            },
+            "japan" : {
+                "magazine": "Weekly Shōnen Jump",
+                "editor": "Shueisha",
+                "nbBooks": 11,
+                "logo": "img/japan/blackclover.jpg",
+                "nbChapters": 51,
+                "publicationEnd": null,
+                "publicationStart": "2015"
             }
         }
     }
