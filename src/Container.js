@@ -5,6 +5,9 @@ import { LIST_MANGA } from './mangaList';
 import MangaDetails from './components/mangaDetails';
 import MangaItem from './components/mangaItem';
 import { getManga } from "./actions/manga";
+import { Select } from "antd";
+
+const { Option } = Select;
 
 class Container extends Component {
     constructor(props) {
@@ -31,6 +34,11 @@ class Container extends Component {
         return (
             <Switch>
                 <Route exact path="/">
+                    <Select defaultValue="Tout" style={{ width: 90 }}>
+                        <Option value="Tout">Tout</Option>
+                        <Option value="Shonen">Shonen</Option>
+                        <Option value="Seinen">Seinen</Option>
+                    </Select>
                     <div className="manga-list">
                         {
                             this.state.mangaHits.map(({ manga }) => (
