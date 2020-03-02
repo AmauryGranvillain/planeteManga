@@ -6,20 +6,24 @@ a{
     text-decoration: none;
 }
 
-.fade-enter {
+.dialog-enter {
     opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
+    transform: scale(1.1);
+  }
+  
+  .dialog-enter-active {
     opacity: 1;
-    transition: opacity 300ms ease-in;
-}
-
-.fade-exit {
+    transform: scale(1);
+    transition: all 300ms;
+  }
+  
+  .dialog-exit {
     opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
+    transform: scale(1);
+  }
+  
+  .dialog-exit-active {
     opacity: 0.01;
-    transition: opacity 300ms ease-in;
-}
+    transform: scale(1.1);
+    transition: all 300ms;
+  }

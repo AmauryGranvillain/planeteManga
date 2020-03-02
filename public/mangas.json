@@ -8,7 +8,10 @@
                     "name": "Masashi Kishimoto"
                 }
             ],
-            "closeMangas": ["black_clover", "satan_666"],
+            "closeMangas": [
+                "black_clover",
+                "satan_666"
+            ],
             "country": "Japan",
             "description": "Naruto est un jeune ninja turbulent et orphelin. Seul depuis tout petit, il multiplie les bêtises en tout genre pour se faire remarquer mais n'en arrive qu'à se faire détester par le village de Konoha. Par le biais de son professeur Iruka et du traître Mizuki, il découvre que cette haine collective n'est autre que le fruit du démon qu'il abrite en lui. Kyubi, le démon renard à neuf queues ayant attaqué le village et scellé en lui par le 4ème Hokage. Mais loin de se laisser abattre, Naruto parvient à devenir un vrai ninja et part en missions accompagné du professeur Kakashi, de son amie Sakura et de son rival, Sasuke Uchiwa.",
             "hasAnime": true,
@@ -25,7 +28,7 @@
                 "logo": "img/france/naruto.png",
                 "nbBooks": 72
             },
-            "japan" : {
+            "japan": {
                 "magazine": "Weekly Shōnen Jump",
                 "editor": "Shueisha",
                 "nbBooks": 72,
@@ -62,7 +65,7 @@
                 "logo": "img/france/kingdom.png",
                 "nbBooks": 0
             },
-            "japan" : {
+            "japan": {
                 "editor": "Shueisha",
                 "magazine": "Weekly Young Jump",
                 "nbBooks": 49,
@@ -102,7 +105,7 @@
                 "logo": "img/france/eyeshield21.png",
                 "nbBooks": 37
             },
-            "japan" : {
+            "japan": {
                 "magazine": "Weekly Shōnen Jump",
                 "editor": "Shueisha",
                 "logo": "img/japan/eyeshield21.png",
@@ -122,7 +125,9 @@
                     "name": "Horikoshi Kouhei"
                 }
             ],
-            "closeMangas": ["black_clover"],
+            "closeMangas": [
+                "black_clover"
+            ],
             "description": "",
             "hasAnime": true,
             "country": "Japan",
@@ -140,7 +145,7 @@
                 "logo": "img/france/bokunoheroacademia.png",
                 "nbBooks": 8
             },
-            "japan" : {
+            "japan": {
                 "magazine": "Weekly Shōnen Jump",
                 "editor": "Shueisha",
                 "logo": "img/japan/bokunoheroacademia.png",
@@ -160,7 +165,10 @@
                     "name": "Tabata Yuuki"
                 }
             ],
-            "closeMangas": ["naruto", "boku_no_hero_academia"],
+            "closeMangas": [
+                "naruto",
+                "boku_no_hero_academia"
+            ],
             "description": "",
             "hasAnime": true,
             "country": "Japan",
@@ -177,7 +185,7 @@
                 "nbBooks": 0,
                 "logo": "img/france/blackclover.jpg"
             },
-            "japan" : {
+            "japan": {
                 "magazine": "Weekly Shōnen Jump",
                 "editor": "Shueisha",
                 "nbBooks": 11,
