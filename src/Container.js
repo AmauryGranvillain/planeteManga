@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import { LIST_MANGA } from './mangaList';
 import MangaDetails from './components/mangaDetails';
 import MangaItem from './components/mangaItem';
 import { getManga } from "./actions/manga";
@@ -14,36 +13,54 @@ class Container extends Component {
         super(props);
         this.state = {
             currentManga: [],
-            mangaList: LIST_MANGA,
             mangaHits: [],
+            currentCategory: "Tous",
         }
-        this.handleManga = this.handleManga.bind(this);
+        this.handleManga = this.handleManga.bind(this)
+        this.handleCategory = this.handleCategory.bind(this)
+        this.handleNewList = this.handleNewList.bind(this)
     }
 
     componentDidMount() {
-        getManga().then(data => this.setState({
-            mangaHits: data
-        }))
+        if (this.state.currentCategory === "" || this.state.currentCategory === "Tous") {
+            getManga().then(data => this.setState({
+                mangaHits: data
+            }))
+        }
     }
 
     handleManga = manga => {
         this.setState({ currentManga: manga })
     }
 
+    handleCategory = value => {
+        this.setState({ currentCategory: value })
+    }
+
+    handleNewList = category => {
+        let mangaList = this.state.mangaHits
+        if (category !== "Tous") {
+            mangaList = this.state.mangaHits.filter(u => u.manga.type === category)
+        }
+        return mangaList.map(({ manga }) => (
+            <MangaItem key={manga.name} manga={manga} changeCurrentManga={() => this.handleManga(manga)} />
+        ))
+    }
+
     render() {
         return (
             <Switch>
                 <Route exact path="/">
-                    <Select defaultValue="Tout" style={{ width: 90 }}>
-                        <Option value="Tout">Tout</Option>
-                        <Option value="Shonen">Shonen</Option>
-                        <Option value="Seinen">Seinen</Option>
-                    </Select>
+                    <div className="panel-filter">
+                        <Select defaultValue={this.state.currentCategory} style={{ width: 90 }} onChange={this.handleCategory}>
+                            <Option value="Tous">Tous</Option>
+                            <Option value="Shonen">Shonen</Option>
+                            <Option value="Seinen">Seinen</Option>
+                        </Select>
+                    </div>
                     <div className="manga-list">
                         {
-                            this.state.mangaHits.map(({ manga }) => (
-                                <MangaItem key={manga.name} manga={manga} changeCurrentManga={() => this.handleManga(manga)} />
-                            ))
+                            this.handleNewList(this.state.currentCategory)
                         }
                     </div>
                 </Route>
