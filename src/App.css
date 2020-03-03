@@ -5,25 +5,13 @@
 a{
     text-decoration: none;
 }
-
-.dialog-enter {
-    opacity: 0.01;
-    transform: scale(1.1);
-  }
-  
-  .dialog-enter-active {
-    opacity: 1;
-    transform: scale(1);
-    transition: all 300ms;
-  }
-  
-  .dialog-exit {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
-  .dialog-exit-active {
-    opacity: 0.01;
-    transform: scale(1.1);
-    transition: all 300ms;
-  }
+.panel-filter{
+  background-color: #ef323a;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.panel-filter > div{
+  margin: 0 5px;
+}
