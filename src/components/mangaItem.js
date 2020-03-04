@@ -32,6 +32,7 @@ class MangaItem extends Component {
                         <span>{manga.japan.publicationStart}</span>
                         <span>{manga.type}</span>
                     </div>
+                    {(manga.isFinished) ? <span className="status finished">Terminé</span> : <span className="status">En cours</span>}
                 </div>
             </Link >
         )

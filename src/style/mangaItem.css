@@ -23,3 +23,10 @@
     border: 3px solid #fff;
     color: white;
 }
+.manga-item .status{
+    padding: 5px 10px;
+    background-color: #ef323a;
+}
+.manga-item .status.finished{
+    background: #37B357;
+}
