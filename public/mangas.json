@@ -1,6 +1,7 @@
 [
     {
         "manga": {
+            "id": 1,
             "name": "Naruto",
             "slug": "naruto",
             "authors": [
@@ -41,6 +42,7 @@
     },
     {
         "manga": {
+            "id": 2,
             "name": "Kingdom",
             "slug": "kingdom",
             "authors": [
@@ -78,6 +80,7 @@
     },
     {
         "manga": {
+            "id": 3,
             "name": "Eyeshield 21",
             "slug": "eyeshield_21",
             "authors": [
@@ -118,6 +121,7 @@
     },
     {
         "manga": {
+            "id": 4,
             "name": "Boku No Hero Academia",
             "slug": "boku_no_hero_academia",
             "authors": [
@@ -158,6 +162,7 @@
     },
     {
         "manga": {
+            "id": 5,
             "name": "Black Clover",
             "slug": "black_clover",
             "authors": [

@@ -50,7 +50,10 @@ class Container extends Component {
         return (
             <Switch>
                 <Route exact path="/">
-                    <FilterBlock currentCategory={this.state.currentCategory} mangaHits={this.state.mangaHits} changeCurrentCategory={(value) => this.handleCategory(value)} />
+                    <FilterBlock currentCategory={this.state.currentCategory}
+                        mangaHits={this.state.mangaHits}
+                        changeCurrentCategory={(value) => this.handleCategory(value)}
+                        changeCurrentManga={this.handleManga} />
                     <div className="manga-list">
                         {
                             this.handleNewListCategory(this.state.currentCategory)

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { AutoComplete, Input, Select } from 'antd'
 import '../style/filterBlock.css';
+import { Link } from 'react-router-dom';
 
 const { Option } = Select;
 
@@ -12,6 +13,7 @@ class FilterBlock extends Component {
         }
         this.handleSearch = this.handleSearch.bind(this)
         this.handleCategory = this.handleCategory.bind(this)
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleSearch = value => {
@@ -20,30 +22,39 @@ class FilterBlock extends Component {
         }
         this.handleNewListName(value)
     }
+    handleChange(manga) {
+        console.log(manga)
+        this.props.changeCurrentManga(manga)
+    }
     handleNewListName = name => {
         let mangaList = this.props.mangaHits
-        if (name !== "") {
-            mangaList = mangaList.filter(u => u.manga.name.includes(name)).map((item) => {
-                return {
-                    value: item.manga.name,
-                    label: (
+        name = name.toLowerCase()
+        mangaList = mangaList.filter(u => u.manga.name.toLowerCase().includes(name)).map((item) => {
+            return {
+                value: item.manga.name,
+                label: (
+                    <Link to={"/manga/" + item.manga.name.toLowerCase()} onClick={() => this.handleChange(item.manga)}>
                         <div key={item.manga.name}>
+                            <img src={"/" + item.manga.japan.logo} alt={"cover " + item.manga.name} style={{ width: "30px" }} />
                             <span>{item.manga.name}</span>
+                            {(item.manga.isFinished) ? <span style={{ color: "#37B357" }}>Terminé</span> : <span style={{ color: "#ef323a" }}>En cours</span>}
                         </div>
-                    )
-                }
-            })
-        }
+                    </Link>
+                )
+            }
+        })
+
         this.setState({ options: mangaList })
     }
     handleCategory(value) {
         this.props.changeCurrentCategory(value)
     }
     render() {
+        console.log(this.state.options)
         const options = [
             {
                 label: 'Manga',
-                options: this.state.options,
+                options: (this.state.options.length === 0) ? [{ value: 'pas de résultats', label: <span>Pas de résultats</span> }] : this.state.options
             },
         ];
         return (
