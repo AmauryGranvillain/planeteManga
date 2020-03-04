@@ -1,0 +1,10 @@
+.panel-filter{
+    background-color: #ef323a;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .panel-filter > div{
+    margin: 0 5px;
+  }
