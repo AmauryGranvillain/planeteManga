@@ -13,17 +13,16 @@ class FilterBlock extends Component {
         }
         this.handleSearch = this.handleSearch.bind(this)
         this.handleCategory = this.handleCategory.bind(this)
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this)
     }
 
     handleSearch = value => {
         if (value) {
             this.setState({ currentSearch: value })
         }
-        this.handleNewListName(value)
+        (value === "") ? this.setState({ options: [{ value: "No results", label: <span>Pas de résultats</span> }] }) : this.handleNewListName(value)
     }
     handleChange(manga) {
-        console.log(manga)
         this.props.changeCurrentManga(manga)
     }
     handleNewListName = name => {
@@ -34,16 +33,17 @@ class FilterBlock extends Component {
                 value: item.manga.name,
                 label: (
                     <Link to={"/manga/" + item.manga.name.toLowerCase()} onClick={() => this.handleChange(item.manga)}>
-                        <div key={item.manga.name}>
-                            <img src={"/" + item.manga.japan.logo} alt={"cover " + item.manga.name} style={{ width: "30px" }} />
-                            <span>{item.manga.name}</span>
-                            {(item.manga.isFinished) ? <span style={{ color: "#37B357" }}>Terminé</span> : <span style={{ color: "#ef323a" }}>En cours</span>}
+                        <div className="option-search" key={item.manga.name}>
+                            <img src={"/" + item.manga.japan.logo} alt={"cover " + item.manga.name} />
+                            <p className="title">{item.manga.name}</p>
+                            {(item.manga.isFinished)
+                                ? <p className="status" style={{ color: "#37B357" }}>Terminé</p>
+                                : <p className="status" style={{ color: "#ef323a" }}>En cours</p>}
                         </div>
                     </Link>
                 )
             }
         })
-
         this.setState({ options: mangaList })
     }
     handleCategory(value) {

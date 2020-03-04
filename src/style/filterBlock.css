@@ -8,3 +8,23 @@
   .panel-filter > div{
     margin: 0 5px;
   }
+  .option-search{
+    display: flex;
+    align-items: center;
+  }
+  .option-search img{
+    width: 60px;
+    padding: 5px;
+    flex: 1;
+  }
+  .option-search img, .option-search p{
+    flex: 1;
+  }
+  .option-search p{
+    margin-bottom: 0;
+  }
+  .option-search p.title{
+    font-weight: bold;
+    font-size: 18px;
+    flex: 3;
+  }
