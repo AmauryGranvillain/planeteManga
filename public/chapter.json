@@ -1,0 +1,92 @@
+[
+    {
+        "chapter": {
+            "id": 1,
+            "number": 1,
+            "title": "Naruto Uzumaki !!",
+            "ref_tome": 1,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 2,
+            "number": 2,
+            "title": "Konoha-Maru !!",
+            "ref_tome": 1,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 3,
+            "number": 3,
+            "title": "Sasuke Uchiwa !!",
+            "ref_tome": 1,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 4,
+            "number": 4,
+            "title": "Kakashi Hatake !!",
+            "ref_tome": 1,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 5,
+            "number": 5,
+            "title": "L’inattention est la pire ennemie !",
+            "ref_tome": 1,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 6,
+            "number": 6,
+            "title": "Non ! Pas Sasuke !",
+            "ref_tome": 1,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 7,
+            "number": 7,
+            "title": "La Conclusion de Kakashi",
+            "ref_tome": 1,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 8,
+            "number": 8,
+            "title": "Recalés !!",
+            "ref_tome": 2,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 9,
+            "number": 9,
+            "title": "Un client embarrassant",
+            "ref_tome": 2,
+            "ref_manga": 1
+        }
+    },
+    {
+        "chapter": {
+            "id": 10,
+            "number": 10,
+            "title": " Au suivant !",
+            "ref_tome": 2,
+            "ref_manga": 1
+        }
+    }
+]

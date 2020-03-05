@@ -17,3 +17,13 @@ export const getTome = async () => {
     })
         .then(response => response.json())
 }
+
+export const getChapter = async () => {
+    return fetch('/chapter.json', {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+    })
+        .then(response => response.json())
+}

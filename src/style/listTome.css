@@ -1,3 +1,15 @@
+body .ant-collapse{
+    margin: 5px 0;
+    border: none;
+}
+body .ant-collapse > .ant-collapse-item{
+    border: none;
+}
+body .ant-collapse > .ant-collapse-item > .ant-collapse-header{
+    background: #323232;
+    color: white;
+    padding: 5px 30px;
+}
 .tome-item{
     display: flex;
     align-items: center;

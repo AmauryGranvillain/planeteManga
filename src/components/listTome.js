@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { getTome } from '../actions/manga';
+import { Collapse } from 'antd'
 
 import "../style/listTome.css"
+import ListChapter from './listChapter';
+
+const { Panel } = Collapse
 
 class ListTome extends Component {
     constructor(props) {
@@ -22,11 +26,15 @@ class ListTome extends Component {
         if (id !== null) {
             tomeList = this.state.tomeHits.filter(u => u.tome.ref_manga === id)
             return tomeList.map(({ tome }) => (
-                <div className="tome-item">
-                    <h4>{tome.title}</h4>
-                    <span className="tome">Tome n° {tome.number}</span>
-                    <span className="date">Date de sortie : {tome.date}</span>
-                </div>
+                <Collapse>
+                    <Panel header={<div className="tome-item">
+                        <h4>{tome.title}</h4>
+                        <span className="tome">Tome n° {tome.number}</span>
+                        <span className="date">Date de sortie : {tome.date}</span>
+                    </div>}>
+                        <ListChapter tome={tome} />
+                    </Panel>
+                </Collapse>
             ))
         }
     }
