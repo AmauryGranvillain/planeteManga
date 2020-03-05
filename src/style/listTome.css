@@ -1,0 +1,16 @@
+.tome-item{
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+    padding: 20px 10px;
+    background-color: #323232;
+    color: white;
+}
+.tome-item > span{
+    margin: 0 5px;
+}
+.tome-item > h4{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 0;
+}

@@ -50,7 +50,6 @@ class FilterBlock extends Component {
         this.props.changeCurrentCategory(value)
     }
     render() {
-        console.log(this.state.options)
         const options = [
             {
                 label: 'Manga',

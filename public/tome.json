@@ -1,0 +1,32 @@
+[
+    {
+        "tome": {
+            "id": 1,
+            "number": 1,
+            "title": "Naruto Uzumaki !!",
+            "img": "",
+            "date": "09/03/2002",
+            "ref_manga": 1
+        }
+    },
+    {
+        "tome": {
+            "id": 2,
+            "number": 2,
+            "title": "Un client embarrassant",
+            "img": "",
+            "date": "13/04/2002",
+            "ref_manga": 1
+        }
+    },
+    {
+        "tome": {
+            "id": 3,
+            "number": 3,
+            "title": "Se battre pour ses rêves !!",
+            "img": "",
+            "date": "06/07/2002",
+            "ref_manga": 1
+        }
+    }
+]

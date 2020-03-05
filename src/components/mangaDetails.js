@@ -3,6 +3,7 @@ import '../style/mangaDetails.css'
 import { Link } from 'react-router-dom';
 import Img from 'react-image';
 import Loader from 'react-loader-spinner';
+import ListTome from './listTome';
 
 class MangaDetails extends Component {
     constructor(props) {
@@ -21,9 +22,9 @@ class MangaDetails extends Component {
 
     render() {
         return (
-            <div>
+            <div className="manga-details">
                 <Link className="backHome" to="/">{"< HOME"}</Link>
-                <div className="manga-details">
+                <div>
                     <div className="container-cover">
                         <Img className="cover-image" src={"/" + this.props.manga.japan.logo} alt={"cover " + this.props.manga.name}
                             loader={<Loader type="RevolvingDot"
@@ -42,6 +43,7 @@ class MangaDetails extends Component {
                     </div>
                     <p>{this.props.manga.description}</p>
                 </div>
+                <ListTome manga={this.props.manga} />
             </div>
         )
     }
