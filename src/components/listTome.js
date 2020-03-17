@@ -28,8 +28,8 @@ class ListTome extends Component {
             return tomeList.map(({ tome }) => (
                 <Collapse>
                     <Panel header={<div className="tome-item">
+                        <span className="tome">{tome.number}</span>
                         <h4>{tome.title}</h4>
-                        <span className="tome">Tome n° {tome.number}</span>
                         <span className="date">Date de sortie : {tome.date}</span>
                     </div>}>
                         <ListChapter tome={tome} />

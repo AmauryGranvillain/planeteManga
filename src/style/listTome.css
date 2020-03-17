@@ -10,6 +10,11 @@ body .ant-collapse > .ant-collapse-item > .ant-collapse-header{
     color: white;
     padding: 5px 30px;
 }
+body .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow{
+    right: 15px;
+    left: initial;
+    font-size: 20px;
+}
 .tome-item{
     display: flex;
     align-items: center;
