@@ -1,38 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { AutoComplete, Input, Select } from 'antd'
 import '../style/filterBlock.css';
 import { Link } from 'react-router-dom';
+import { array, func, string } from "prop-types";
 
 const { Option } = Select;
 
-class FilterBlock extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            options: [],
-        }
-        this.handleSearch = this.handleSearch.bind(this)
-        this.handleCategory = this.handleCategory.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+const FilterBlock = ({ currentCategory, mangaHits, changeCurrentCategory, changeCurrentManga }) => {
+
+    const [optionsSearch, setOptionsSearch] = useState([{ value: 'pas de résultats', label: <span>Pas de résultats</span> }]);
+
+    const handleSearch = results => {
+        handleNewListName(results)
     }
 
-    handleSearch = value => {
-        if (value) {
-            this.setState({ currentSearch: value })
-        }
-        (value === "") ? this.setState({ options: [{ value: "No results", label: <span>Pas de résultats</span> }] }) : this.handleNewListName(value)
+    const handleChange = manga => {
+        changeCurrentManga(manga)
     }
-    handleChange(manga) {
-        this.props.changeCurrentManga(manga)
-    }
-    handleNewListName = name => {
-        let mangaList = this.props.mangaHits
+    const handleNewListName = name => {
+        let mangaList = mangaHits
         name = name.toLowerCase()
-        mangaList = mangaList.filter(u => u.manga.name.toLowerCase().includes(name)).map((item) => {
+        mangaList = mangaList.filter(u => u.manga.name.toLowerCase().includes(name)).map((item, index) => {
             return {
+                key: index,
                 value: item.manga.name,
                 label: (
-                    <Link to={"/manga/" + item.manga.name.toLowerCase()} onClick={() => this.handleChange(item.manga)}>
+                    <Link to={"/manga/" + item.manga.name.toLowerCase()} onClick={() => handleChange(item.manga)}>
                         <div className="option-search" key={item.manga.name}>
                             <img src={"/" + item.manga.japan.logo} alt={"cover " + item.manga.name} />
                             <p className="title">{item.manga.name}</p>
@@ -44,37 +37,37 @@ class FilterBlock extends Component {
                 )
             }
         })
-        this.setState({ options: mangaList })
+        setOptionsSearch(mangaList)
     }
-    handleCategory(value) {
-        this.props.changeCurrentCategory(value)
+    const handleCategory = value => {
+        changeCurrentCategory(value)
     }
-    render() {
-        const options = [
-            {
-                label: 'Manga',
-                options: (this.state.options.length === 0) ? [{ value: 'pas de résultats', label: <span>Pas de résultats</span> }] : this.state.options
-            },
-        ];
-        return (
-            <div className="panel-filter">
-                <AutoComplete
-                    dropdownClassName="certain-category-search-dropdown"
-                    dropdownMatchSelectWidth={500}
-                    style={{ width: 250 }}
-                    onSearch={this.handleSearch}
-                    options={options}
-                >
-                    <Input.Search size="large" placeholder="chercher un manga" />
-                </AutoComplete>
-                <Select defaultValue={this.props.currentCategory} style={{ width: 90 }} onChange={this.handleCategory}>
-                    <Option value="Tous">Tous</Option>
-                    <Option value="Shonen">Shonen</Option>
-                    <Option value="Seinen">Seinen</Option>
-                </Select>
-            </div>
-        )
-    }
+
+    return (
+        <div className="panel-filter">
+            <AutoComplete
+                dropdownClassName="certain-category-search-dropdown"
+                dropdownMatchSelectWidth={500}
+                style={{ width: 250 }}
+                onSearch={handleSearch}
+                options={optionsSearch}
+            >
+                <Input.Search size="large" placeholder="chercher un manga" />
+            </AutoComplete>
+            <Select defaultValue={currentCategory} style={{ width: 90 }} onChange={handleCategory}>
+                <Option value="All">Tous</Option>
+                <Option value="Shonen">Shonen</Option>
+                <Option value="Seinen">Seinen</Option>
+            </Select>
+        </div>
+    )
 }
+
+FilterBlock.propTypes = {
+    currentCategory: string.isRequired,
+    mangaHits: array.isRequired,
+    changeCurrentCategory: func.isRequired,
+    changeCurrentManga: func.isRequired
+};
 
 export default FilterBlock;

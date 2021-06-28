@@ -1,43 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../style/mangaItem.css';
 
 import { Link } from 'react-router-dom';
+import { func, object } from "prop-types";
+import FilterBlock from "./filterBlock";
 
-class MangaItem extends Component {
-    constructor(props) {
-        super(props);
-        this.handleChange = this.handleChange.bind(this);
-        this.checkAuthor = this.checkAuthor.bind(this);
-    }
-    handleChange(manga) {
-        this.props.changeCurrentManga(manga)
-    }
-    checkAuthor() {
-        if (!this.props.manga.authors || this.props.manga.authors === 0) {
+const MangaItem = ({ manga, changeCurrentManga }) => {
+
+    const name = manga.name.replace(/ /g, "_").toLowerCase();
+
+    const checkAuthor = () => {
+        if (!manga.authors || manga.authors === 0) {
             return <span>Pas d'auteur</span>
         }
-        return this.props.manga.authors.map((author, index) => {
+        return manga.authors.map((author, index) => {
             return <span key={index}>{author.name}</span>
         })
     }
-    render() {
-        const manga = this.props.manga;
-        const name = this.props.manga.name.replace(/ /g, "_").toLowerCase();
-        return (
-            <Link to={"/manga/" + name} onClick={this.handleChange}>
-                <div className={`manga-item`}>
-                    <h3>{manga.name}</h3>
-                    <div className="infosup">
-                        {this.checkAuthor()}
-                        <span>{manga.japan.publicationStart}</span>
-                        <span>{manga.type}</span>
-                    </div>
-                    {(manga.isFinished) ? <span className="status finished">Terminé</span> : <span className="status">En cours</span>}
+    return (
+        <Link to={"/manga/" + name} onClick={changeCurrentManga}>
+            <div className={`manga-item`}>
+                <h3>{manga.name}</h3>
+                <div className="infosup">
+                    {checkAuthor()}
+                    - <span>{manga.japan.publicationStart}</span>
+                    - <span>{manga.type}</span>
                 </div>
-            </Link >
-        )
-    }
+                {(manga.isFinished) ? <span className="status finished">Terminé</span> : <span className="status">En cours</span>}
+            </div>
+        </Link >
+    )
 }
+
+FilterBlock.propTypes = {
+    manga: object,
+    changeCurrentManga: func.isRequired
+};
 
 export default MangaItem;
 

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
 
 import MangaDetails from './components/mangaDetails';
@@ -6,66 +6,50 @@ import MangaItem from './components/mangaItem';
 import { getManga } from "./actions/manga";
 import FilterBlock from "./components/filterBlock";
 
-class Container extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentManga: [],
-            mangaHits: [],
-            currentCategory: "Tous",
-            currentSearch: "",
-        }
-        this.handleManga = this.handleManga.bind(this)
-    }
-    componentDidMount() {
-        if (this.state.currentCategory === "" || this.state.currentCategory === "Tous") {
-            getManga().then(data => this.setState({
-                mangaHits: data
-            }))
-        }
-    }
+ const Container  = () => {
 
-    handleManga = manga => {
-        if (manga) {
-            this.setState({ currentManga: manga })
-        }
-    }
+    const [currentManga, setCurrentManga] = useState({});
+    const [mangaHits, setMangaHits] = useState([]);
+    const [currentCategory, setCurrentCategory] = useState("All");
 
-    handleCategory = value => {
-        if (value) {
-            this.setState({ currentCategory: value })
+    useEffect(() => {
+        if (currentCategory === "" || currentCategory === "All") {
+            getManga().then(data => setMangaHits(data))
         }
-    }
-    handleNewListCategory = category => {
-        let mangaList = this.state.mangaHits
-        if (category !== "Tous") {
-            mangaList = this.state.mangaHits.filter(u => u.manga.type === category)
+    }, [currentCategory]);
+
+    const handleCategory = value => {
+        setCurrentCategory(value)
+    };
+
+    const handleNewListCategory = category => {
+        let mangaList = mangaHits
+        if (category !== "All") {
+            mangaList = mangaHits.filter(u => u.manga.type === category)
         }
         return mangaList.map(({ manga }) => (
-            <MangaItem key={manga.name} manga={manga} changeCurrentManga={() => this.handleManga(manga)} />
+            <MangaItem key={manga.name} manga={manga} changeCurrentManga={() => setCurrentManga(manga)} />
         ))
-    }
+    };
 
-    render() {
         return (
             <Switch>
                 <Route exact path="/">
-                    <FilterBlock currentCategory={this.state.currentCategory}
-                        mangaHits={this.state.mangaHits}
-                        changeCurrentCategory={(value) => this.handleCategory(value)}
-                        changeCurrentManga={this.handleManga} />
+                    <FilterBlock currentCategory={currentCategory}
+                        mangaHits={mangaHits}
+                        changeCurrentCategory={(value) => handleCategory(value)}
+                        changeCurrentManga={setCurrentManga} />
                     <div className="manga-list">
                         {
-                            this.handleNewListCategory(this.state.currentCategory)
+                            handleNewListCategory(currentCategory)
                         }
                     </div>
                 </Route>
                 <Route path="/manga">
-                    <MangaDetails manga={this.state.currentManga} />
+                    <MangaDetails manga={currentManga} />
                 </Route>
             </Switch>
         )
     }
-}
 
 export default Container;

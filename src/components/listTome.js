@@ -1,37 +1,38 @@
-import React, { Component } from 'react';
+import React, {useEffect, useState} from 'react';
 import { getTome } from '../actions/manga';
 import { Collapse } from 'antd'
 
 import "../style/listTome.css"
 import ListChapter from './listChapter';
+import {object} from "prop-types";
 
 const { Panel } = Collapse
 
-class ListTome extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            tomeHits: []
-        }
+const ListTome = ({ manga }) => {
+
+    const [tomeHits, setTomeHits] = useState([]);
+
+    useEffect(() =>{
+        getTome().then(data => setTomeHits(data))
+    }, []);
+
+    const setHeaderPanel = tome => {
+        return(
+            <div className="tome-item">
+                <span className="tome">{tome.number}</span>
+                <h4>{tome.title}</h4>
+                <span className="date">Date de sortie : {tome.date}</span>
+            </div>
+        )
     }
 
-    componentDidMount() {
-        getTome().then(data => this.setState({
-            tomeHits: data
-        }))
-    }
-
-    getTometoManga(id) {
-        let tomeList = this.state.tomeHits
+    const getTometoManga = id => {
+        let tomeList = tomeHits
         if (id !== null) {
-            tomeList = this.state.tomeHits.filter(u => u.tome.ref_manga === id)
+            tomeList = tomeHits.filter(u => u.tome.ref_manga === id)
             return tomeList.map(({ tome }) => (
-                <Collapse>
-                    <Panel header={<div className="tome-item">
-                        <span className="tome">{tome.number}</span>
-                        <h4>{tome.title}</h4>
-                        <span className="date">Date de sortie : {tome.date}</span>
-                    </div>}>
+                <Collapse key={tome.number}>
+                    <Panel key={tome.number} header={setHeaderPanel(tome)}>
                         <ListChapter tome={tome} />
                     </Panel>
                 </Collapse>
@@ -39,15 +40,17 @@ class ListTome extends Component {
         }
     }
 
-    render() {
-        return (
-            <div>
-                {
-                    this.getTometoManga(this.props.manga.id)
-                }
-            </div>
-        )
-    }
+    return (
+        <div>
+            {
+                getTometoManga(manga.id)
+            }
+        </div>
+    )
+}
+
+ListTome.propTypes = {
+    manga: object.isRequired
 }
 
 export default ListTome;
